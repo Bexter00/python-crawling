@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <title>Wordcloud를 이용한 재난문자 시각화</title>
+  </head>
+  <body>
+    <form method="POST" action="/start_crawling">
+      <h1>전국 재난문자 발생 현황 검색</h1>
+      시작날짜 : <input type="text" name="sDate" /> 종료날짜 :
+      <input type="text" name="eDate" />
+      <button type="submit">검색</button>
+    </form>
+  </body>
+</html>

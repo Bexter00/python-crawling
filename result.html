@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<style>
+  table.type09 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+  }
+  table.type09 thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+    border-bottom: 3px solid #036;
+  }
+  table.type09 tbody th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+  }
+  table.type09 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+  }
+</style>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <title>Wordcloud Image</title>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <img src="static/image/Wordcloud.jpg" />
+    </div>
+    <div>
+      <br />
+      <table class="type09" , style="margin-left: auto; margin-right: auto">
+        <thead>
+          <tr>
+            <th scope="cols">발생 지역</th>
+            <th scope="cols">횟수</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for key, value in result.items() %}
+          <tr>
+            <th scope="row">{{key}}</th>
+            <td>{{value}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
